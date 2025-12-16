@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Growth Machina AI</title>
+    <meta name="description" content="Learn about Growth Machina AI and our mission to help carpet cleaning businesses grow with AI-powered tools.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-bg-cream: #f8f5f0;
+            --color-border: #ece8e7;
+            --color-text: #5d5d5f;
+            --color-text-dark: #18181a;
+            --color-footer: #151212;
+            --color-footer-border: #292929;
+            --gradient-primary: linear-gradient(135deg, rgb(242, 86, 61) 0%, rgb(254, 10, 124) 100%);
+            --color-accent: rgb(242, 86, 61);
+            --max-width: 1304px;
+            --radius: 8px;
+            --padding-section: 98px;
+            --padding-container: 49px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Stripe overlays */
+        .stripe-left, .stripe-right {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: calc((100vw - var(--max-width)) / 2);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.05;
+            background-image: repeating-linear-gradient(145deg, transparent 0px, transparent 7px, #5d5d5f 7px, #5d5d5f 8px);
+        }
+        .stripe-left { left: 0; }
+        .stripe-right { right: 0; }
+        @media (max-width: 1400px) { .stripe-left, .stripe-right { display: none; } }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 16px var(--padding-container);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 1px solid var(--color-border);
+            border-right: 1px solid var(--color-border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--color-text-dark);
+        }
+
+        .nav-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text);
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover { color: var(--color-text-dark); }
+
+        .btn-coral {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-coral:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(242, 86, 61, 0.3);
+        }
+
+        .nav-cta { display: none; }
+
+        .nav-mobile-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--color-text-dark);
+            border-radius: 2px;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 140px 0 60px;
+            text-align: center;
+            background: var(--color-bg-cream);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            font-size: 1.15rem;
+            color: var(--color-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        .section {
+            padding: var(--padding-section) 0;
+        }
+
+        .section-alt {
+            background: var(--color-bg-cream);
+        }
+
+        /* About Grid */
+        .about-grid {
+            display: grid;
+            gap: 60px;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--padding-container);
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: var(--color-text);
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04), 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            gap: 24px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--padding-container);
+        }
+
+        .value-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .value-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(242, 86, 61, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 100px 0;
+            background: var(--color-bg-cream);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: var(--color-text);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-footer);
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            border-left: 1px solid var(--color-footer-border);
+            border-right: 1px solid var(--color-footer-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            gap: 40px;
+            padding: 60px var(--padding-container);
+        }
+
+        .footer-brand { max-width: 300px; }
+
+        .footer-brand .nav-logo {
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .footer-brand p { font-size: 0.95rem; }
+
+        .footer-links h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+
+        .footer-links a {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover { color: white; }
+
+        .footer-bottom {
+            padding: 24px var(--padding-container);
+            border-top: 1px solid var(--color-footer-border);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .footer-bottom p { font-size: 0.875rem; }
+
+        .footer-legal {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-legal a:hover { color: white; }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            .nav-cta { display: block; }
+            .nav-mobile-toggle { display: none; }
+            .about-grid { grid-template-columns: 1fr 1fr; }
+            .values-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+            .footer-legal { justify-content: flex-end; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stripe-left"></div>
+    <div class="stripe-right"></div>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">⚡</div>
+                <span>Growth Machina</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="btn-coral nav-cta">Get Started →</a>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>About Growth Machina</h1>
+            <p>We're on a mission to help carpet cleaning businesses thrive with AI-powered growth tools.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2>Why Carpet Cleaning?</h2>
+                <p>We've worked with dozens of service businesses and noticed something: carpet cleaning companies were consistently underserved by technology. Most were still missing calls, losing leads to competitors, and struggling with outdated websites that didn't convert.</p>
+                <p>Meanwhile, the tools that could help—AI chatbots, voice agents, modern websites—were either too expensive, too complicated, or designed for enterprise companies with IT departments.</p>
+                <p>We built Growth Machina to change that. Our tools are designed specifically for carpet cleaning businesses, priced for small business budgets, and simple enough that you don't need a tech background to use them.</p>
+            </div>
+            <div class="about-image">
+                <img src="images/testimonials-bg.jpg" alt="Carpet cleaning professional greeting customer">
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Built for You</h3>
+                <p>Every feature is designed with carpet cleaning businesses in mind. No bloat, no unnecessary complexity—just tools that help you book more jobs.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">💰</div>
+                <h3>Honest Pricing</h3>
+                <p>Simple, transparent pricing with no hidden fees. You know exactly what you're paying for, and we offer a 60-day money-back guarantee.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Real Support</h3>
+                <p>When you need help, you talk to a real person who understands your business—not a chatbot or an overseas call center.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="images/howitworks.jpg" alt="Clean carpet in modern living room">
+            </div>
+            <div class="about-content">
+                <h2>Our Approach</h2>
+                <p>We don't believe in one-size-fits-all solutions. When you work with us, we learn about your specific business—your services, your pricing, your service area, your voice.</p>
+                <p>Then we build and train your AI tools to represent your business authentically. Your chatbot sounds like you. Your voice agent knows your pricing. Your website reflects your brand.</p>
+                <p>The result? Your customers get a seamless experience, and you get more booked jobs without spending more time on the phone.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Grow Your Business?</h2>
+            <p>Schedule a free consultation and see how our tools can work for you.</p>
+            <a href="contact.html" class="btn-coral">Schedule Free Consultation →</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-icon">⚡</div>
+                        <span>Growth Machina</span>
+                    </a>
+                    <p>AI-powered growth tools designed specifically for carpet cleaning businesses.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="index.html#products">Website + Chatbot</a></li>
+                        <li><a href="index.html#products">Voice AI Agent</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:9162346659">(916) 234-6659</a></li>
+                        <li><a href="mailto:hello@growthmachina.ai">hello@growthmachina.ai</a></li>
+                        <li>Sacramento, CA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Growth Machina AI, LLC. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Growth Machina AI</title>
+    <meta name="description" content="Privacy Policy for Growth Machina AI services.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-bg-cream: #f8f5f0;
+            --color-border: #ece8e7;
+            --color-text: #5d5d5f;
+            --color-text-dark: #18181a;
+            --color-footer: #151212;
+            --color-footer-border: #292929;
+            --gradient-primary: linear-gradient(135deg, rgb(242, 86, 61) 0%, rgb(254, 10, 124) 100%);
+            --color-accent: rgb(242, 86, 61);
+            --max-width: 1304px;
+            --radius: 8px;
+            --padding-section: 98px;
+            --padding-container: 49px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        a { color: var(--color-accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .stripe-left, .stripe-right {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: calc((100vw - var(--max-width)) / 2);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.05;
+            background-image: repeating-linear-gradient(145deg, transparent 0px, transparent 7px, #5d5d5f 7px, #5d5d5f 8px);
+        }
+        .stripe-left { left: 0; }
+        .stripe-right { right: 0; }
+        @media (max-width: 1400px) { .stripe-left, .stripe-right { display: none; } }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 16px var(--padding-container);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 1px solid var(--color-border);
+            border-right: 1px solid var(--color-border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--color-text-dark);
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--color-text); text-decoration: none; }
+        .nav-links a:hover { color: var(--color-text-dark); text-decoration: none; }
+
+        .btn-coral {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-coral:hover { text-decoration: none; }
+
+        .nav-cta { display: none; }
+
+        .nav-mobile-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--color-text-dark);
+            border-radius: 2px;
+        }
+
+        .page-header {
+            padding: 140px 0 60px;
+            text-align: center;
+            background: var(--color-bg-cream);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            font-size: 1rem;
+            color: var(--color-text);
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--padding-section) 24px;
+        }
+
+        .legal-content h2 {
+            font-size: 1.5rem;
+            margin-top: 48px;
+            margin-bottom: 16px;
+        }
+
+        .legal-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .legal-content p {
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .legal-content ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        .legal-content li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .footer {
+            background: var(--color-footer);
+            color: rgba(255,255,255,0.7);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            border-left: 1px solid var(--color-footer-border);
+            border-right: 1px solid var(--color-footer-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            gap: 40px;
+            padding: 60px var(--padding-container);
+        }
+
+        .footer-brand { max-width: 300px; }
+        .footer-brand .nav-logo { margin-bottom: 16px; color: white; }
+        .footer-brand p { font-size: 0.95rem; }
+
+        .footer-links h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { font-size: 0.95rem; color: rgba(255,255,255,0.7); text-decoration: none; }
+        .footer-links a:hover { color: white; }
+
+        .footer-bottom {
+            padding: 24px var(--padding-container);
+            border-top: 1px solid var(--color-footer-border);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .footer-bottom p { font-size: 0.875rem; }
+
+        .footer-legal {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a { font-size: 0.875rem; color: rgba(255,255,255,0.5); }
+        .footer-legal a:hover { color: white; }
+
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            .nav-cta { display: block; }
+            .nav-mobile-toggle { display: none; }
+            .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+            .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+            .footer-legal { justify-content: flex-end; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stripe-left"></div>
+    <div class="stripe-right"></div>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">⚡</div>
+                <span>Growth Machina</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="btn-coral nav-cta">Get Started →</a>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Last updated: January 1, 2025</p>
+        </div>
+    </header>
+
+    <main class="legal-content">
+        <h2>1. Introduction</h2>
+        <p>Growth Machina AI, LLC ("Company," "we," "us," or "our") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.</p>
+
+        <h2>2. Information We Collect</h2>
+        <p>We collect information that you provide directly to us, including:</p>
+        <ul>
+            <li><strong>Account Information:</strong> Name, email address, phone number, business name, and billing information when you sign up for our services.</li>
+            <li><strong>Business Information:</strong> Details about your carpet cleaning business, including services offered, pricing, and service areas.</li>
+            <li><strong>Communication Data:</strong> Records of your communications with us, including support requests and feedback.</li>
+            <li><strong>Usage Data:</strong> Information about how you use our services, including chatbot interactions, call recordings, and website analytics.</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+            <li>Provide, maintain, and improve our services</li>
+            <li>Train and customize AI agents for your business</li>
+            <li>Process transactions and send related information</li>
+            <li>Send promotional communications (with your consent)</li>
+            <li>Respond to your comments, questions, and requests</li>
+            <li>Monitor and analyze trends, usage, and activities</li>
+            <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
+        </ul>
+
+        <h2>4. Information Sharing</h2>
+        <p>We do not sell your personal information. We may share your information in the following circumstances:</p>
+        <ul>
+            <li><strong>Service Providers:</strong> With third-party vendors who perform services on our behalf, such as payment processing, data analysis, and customer support.</li>
+            <li><strong>Legal Requirements:</strong> When required by law or to respond to legal process.</li>
+            <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets.</li>
+            <li><strong>With Your Consent:</strong> When you have given us permission to share your information.</li>
+        </ul>
+
+        <h2>5. Data Retention</h2>
+        <p>We retain your personal information for as long as necessary to provide our services and fulfill the purposes described in this Privacy Policy. Specifically:</p>
+        <ul>
+            <li>Account information is retained while your account is active and for 2 years after account closure.</li>
+            <li>Call recordings and transcripts are retained for 12 months.</li>
+            <li>Chatbot conversation logs are retained for 12 months.</li>
+        </ul>
+
+        <h2>6. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+            <li>Access the personal information we hold about you</li>
+            <li>Request correction of inaccurate information</li>
+            <li>Request deletion of your personal information</li>
+            <li>Opt out of marketing communications</li>
+            <li>Request a copy of your data in a portable format</li>
+        </ul>
+        <p>To exercise these rights, contact us at <a href="mailto:hello@growthmachina.ai">hello@growthmachina.ai</a>.</p>
+
+        <h2>7. California Privacy Rights (CCPA)</h2>
+        <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):</p>
+        <ul>
+            <li>The right to know what personal information is being collected</li>
+            <li>The right to know whether your personal information is sold or disclosed and to whom</li>
+            <li>The right to say no to the sale of personal information</li>
+            <li>The right to equal service and price, even if you exercise your privacy rights</li>
+        </ul>
+        <p>We do not sell your personal information as defined by the CCPA.</p>
+
+        <h2>8. Data Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+
+        <h2>9. Third-Party Links</h2>
+        <p>Our services may contain links to third-party websites or services. We are not responsible for the privacy practices of these third parties. We encourage you to read their privacy policies.</p>
+
+        <h2>10. Children's Privacy</h2>
+        <p>Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If we learn we have collected personal information from a child, we will delete it.</p>
+
+        <h2>11. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. Your continued use of our services after any changes constitutes acceptance of the updated policy.</p>
+
+        <h2>12. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us:</p>
+        <ul>
+            <li>Email: <a href="mailto:hello@growthmachina.ai">hello@growthmachina.ai</a></li>
+            <li>Phone: <a href="tel:9162346659">(916) 234-6659</a></li>
+            <li>Address: Sacramento, California</li>
+        </ul>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-icon">⚡</div>
+                        <span>Growth Machina</span>
+                    </a>
+                    <p>AI-powered growth tools designed specifically for carpet cleaning businesses.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="index.html#products">Website + Chatbot</a></li>
+                        <li><a href="index.html#products">Voice AI Agent</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:9162346659">(916) 234-6659</a></li>
+                        <li><a href="mailto:hello@growthmachina.ai">hello@growthmachina.ai</a></li>
+                        <li>Sacramento, CA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Growth Machina AI, LLC. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

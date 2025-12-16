@@ -1,0 +1,18 @@
+{
+  "name": "growthmachina-website",
+  "version": "1.0.0",
+  "description": "Growth Machina AI - AI-powered growth tools for carpet cleaning businesses",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "carpet cleaning",
+    "ai",
+    "website",
+    "voice ai",
+    "chatbot"
+  ],
+  "author": "Growth Machina AI",
+  "license": "MIT"
+}
